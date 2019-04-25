@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  service:
+    restart: always
+    build: 
+      context: ./
+      dockerfile: ./dockerizing/service/Dockerfile
+    volumes:
+      - .:/usr/src/myproject/
+
+  nginx:
+    restart: always
+    build: 
+      context: ./
+      dockerfile: ./dockerizing/nginx/Dockerfile
+    volumes:
+      - .:/usr/src/myproject/
+    ports:
+      - "8080:80"
+      - "10443:443"
+    links:
+      - service:service

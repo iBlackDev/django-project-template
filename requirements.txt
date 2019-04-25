@@ -1,0 +1,12 @@
+django==2.2
+uwsgi
+redis
+djangorestframework
+djangorestframework-jwt
+requests
+django-cors-headers
+PyMySQL
+mysqlclient
+simplejson
+django-cors-middleware
+django-environ
